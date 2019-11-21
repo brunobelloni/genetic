@@ -2,25 +2,26 @@ from utils.genetic import Genetic
 
 
 def run():
-    phrase = 'Frase de Teste'
+    phrase = 'abcd'
+    generation = 0
 
     genetic = Genetic(
         src_phrase=phrase,
-        num_populations=10,
-        num_chromosomes=30,
-        crossover_rate=0.4,
-        mutation_rate=0.4,
+        num_populations=100,
+        num_chromosomes=50,
+        mutation_rate=0.8
     )
-    while True:
-        # generation logs here.
+
+    while genetic.best_match != f'{100:.2f}% = {phrase}':
+        generation += 1
+        genetic.logs(generation=generation)
 
         for population in genetic.populations:
             population.crossover()
             population.mutation()
-            population.fitness()
             population.eliminate_less_fit()
 
-    print('stop')
+        genetic.update_best_match()
 
 
 if __name__ == '__main__':

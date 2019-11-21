@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from utils.chromosome import Chromosome
+import random
 
 
 class Population:
@@ -23,12 +24,12 @@ class Population:
             chromosome = Chromosome(population=self)
             self.chromosomes.append(chromosome)
 
-    def selection(self) -> tuple[Chromosome, Chromosome]:
+    def selection(self, reverse=True) -> tuple[Chromosome, Chromosome]:
         """
         Select the top two chromosomes in the population
         """
         list_fit: List[Chromosome] = [chromosome for chromosome in self.chromosomes]
-        list_fit.sort(key=lambda chromosome: chromosome.fitness(), reverse=True)
+        list_fit.sort(key=lambda chromosome: chromosome.fitness(), reverse=reverse)
         return list_fit[0], list_fit[1]
 
     def crossover(self) -> None:
@@ -36,16 +37,18 @@ class Population:
         crosses two chromosomes
         """
         chromosome1, chromosome2 = self.selection()
-        new_cromossome1, new_cromossome2 = chromosome1.crossover(chromosome2)
+        new_chromosome1, new_chromosome2 = chromosome1.crossover(chromosome2)
 
-        self.chromosomes.append(new_cromossome1)
-        self.chromosomes.append(new_cromossome2)
+        self.chromosomes.append(new_chromosome1)
+        self.chromosomes.append(new_chromosome2)
 
     def mutation(self) -> None:
-        pass
-
-    def fitness(self) -> None:
-        pass
+        for chromosome in self.chromosomes:
+            if random.random() < self.genetic.mutation_rate:
+                chromosome.mutation()
+                chromosome.mutation()
 
     def eliminate_less_fit(self) -> None:
-        pass
+        chromosome1, chromosome2 = self.selection(reverse=False)
+        self.chromosomes.remove(chromosome1)
+        self.chromosomes.remove(chromosome2)
