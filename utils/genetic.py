@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from .population import Population
 
 
@@ -16,7 +18,7 @@ class Genetic:
         self.crossover_rate = crossover_rate
         self.num_populations = num_populations
         self.num_chromosomes = num_chromosomes
-        self.populations = list()  # list of Population
+        self.populations: list[Population] = list()
 
         self.initilize()
 
@@ -26,17 +28,4 @@ class Genetic:
         """
         for _ in range(self.num_populations):
             population = Population(num_chromosomes=self.num_chromosomes, genetic=self)
-
             self.populations.append(population)
-
-    def selection(self, population):
-        pass
-
-    def crossover(self, population):
-        pass
-
-    def mutate(self, population):
-        pass
-
-    def generate(self, population):
-        pass

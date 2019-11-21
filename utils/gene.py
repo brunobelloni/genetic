@@ -1,3 +1,4 @@
+from __future__ import annotations
 import random
 import string
 
@@ -5,14 +6,15 @@ ascii = [char for char in string.ascii_letters] + [' ']
 
 
 class Gene:
-    def __init__(self, chromosome, letter: str = None):
+    def __init__(self, chromosome: Chromosome, letter: str = None):
         """
         Gene can have either a value 1 (feature is included) or 0 (feature is excluded).
         """
         self.letter = letter
-        self.chromosome = chromosome  # reference to Chromosome
+        self.chromosome = chromosome
 
-        self.initilize()
+        if self.letter is None:
+            self.initilize()
 
     def initilize(self):
         """
