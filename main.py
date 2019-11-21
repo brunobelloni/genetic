@@ -2,11 +2,17 @@ from utils.genetic import Genetic
 
 
 def run():
+    phrase = 'Frase de Teste'
+
     genetic = Genetic(
-        num_generations=10,
+        src_phrase=phrase,
+        num_populations=10,
         num_chromosomes=30,
-        mutation_rate=0.4
+        crossover_rate=0.4,
+        mutation_rate=0.4,
     )
+
+    print('stop')
 
 
 if __name__ == '__main__':
