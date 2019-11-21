@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="864959f2-6bfb-4801-a623-fd96f1b59c6b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/chromosome.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/chromosome.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/gene.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/gene.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/genetic.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/genetic.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/population.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/population.py" afterDir="false" />
     </list>
@@ -53,7 +53,7 @@
       <option name="presentableId" value="Default" />
       <updated>1574335163568</updated>
       <workItem from="1574335166610" duration="130000" />
-      <workItem from="1574335309340" duration="8783000" />
+      <workItem from="1574335309340" duration="9527000" />
     </task>
     <task id="LOCAL-00001" summary="idea settings">
       <created>1574335452082</created>
@@ -69,7 +69,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574342925533</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="generic type">
+      <created>1574345199573</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1574345199573</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -91,7 +98,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="idea settings" />
     <MESSAGE value="code architecture" />
-    <option name="LAST_COMMIT_MESSAGE" value="code architecture" />
+    <MESSAGE value="generic type" />
+    <option name="LAST_COMMIT_MESSAGE" value="generic type" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -105,6 +113,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/genetic$main.coverage" NAME="main Coverage Results" MODIFIED="1574345077227" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/genetic$main.coverage" NAME="main Coverage Results" MODIFIED="1574345715478" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

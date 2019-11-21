@@ -14,7 +14,7 @@ class Chromosome:
         if initialize:
             self.initilize()
 
-    def initilize(self):
+    def initilize(self) -> None:
         """
         Initialize the chromosome
         """
@@ -59,6 +59,10 @@ class Chromosome:
         return self.get_phrase[:int(len(self.get_phrase) / 2)]
 
     def set_start_half(self, start_half: str):
+        """
+        sets the first part of chromosome
+        NOTE: needs to be used before method set_end_half
+        """
         for letter in start_half:
             gene = Gene(letter=letter, chromosome=self)
             self.genes.append(gene)
@@ -70,6 +74,10 @@ class Chromosome:
         return self.get_phrase[int(len(self.get_phrase) / 2):]
 
     def set_end_half(self, end_half: str):
+        """
+        sets the second part of chromosome
+        NOTE: needs to be used after method set_start_half
+        """
         for letter in end_half:
             gene = Gene(letter=letter, chromosome=self)
             self.genes.append(gene)

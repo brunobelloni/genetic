@@ -15,7 +15,7 @@ class Population:
 
         self.initilize()
 
-    def initilize(self):
+    def initilize(self) -> None:
         """
         Initialize the population
         """
@@ -23,7 +23,7 @@ class Population:
             chromosome = Chromosome(population=self)
             self.chromosomes.append(chromosome)
 
-    def selection(self):
+    def selection(self) -> tuple[Chromosome, Chromosome]:
         """
         Select the top two chromosomes in the population
         """
@@ -31,9 +31,21 @@ class Population:
         list_fit.sort(key=lambda chromosome: chromosome.fitness(), reverse=True)
         return list_fit[0], list_fit[1]
 
-    def crossover(self):
+    def crossover(self) -> None:
         """
         crosses two chromosomes
         """
         chromosome1, chromosome2 = self.selection()
-        chromosome1.crossover(chromosome2)
+        new_cromossome1, new_cromossome2 = chromosome1.crossover(chromosome2)
+
+        self.chromosomes.append(new_cromossome1)
+        self.chromosomes.append(new_cromossome2)
+
+    def mutation(self) -> None:
+        pass
+
+    def fitness(self) -> None:
+        pass
+
+    def eliminate_less_fit(self) -> None:
+        pass

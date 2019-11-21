@@ -8,7 +8,8 @@ ascii = [char for char in string.ascii_letters] + [' ']
 class Gene:
     def __init__(self, chromosome: Chromosome, letter: str = None):
         """
-        Gene can have either a value 1 (feature is included) or 0 (feature is excluded).
+        Gene represents one letter of the alphabet
+        Lowercase is different from Uppercase
         """
         self.letter = letter
         self.chromosome = chromosome
@@ -16,7 +17,7 @@ class Gene:
         if self.letter is None:
             self.initilize()
 
-    def initilize(self):
+    def initilize(self) -> None:
         """
         Initialize the gene
         """

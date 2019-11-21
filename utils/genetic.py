@@ -22,7 +22,7 @@ class Genetic:
 
         self.initilize()
 
-    def initilize(self):
+    def initilize(self) -> None:
         """
         Initialize the population list
         """

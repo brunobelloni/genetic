@@ -11,6 +11,14 @@ def run():
         crossover_rate=0.4,
         mutation_rate=0.4,
     )
+    while True:
+        # generation logs here.
+
+        for population in genetic.populations:
+            population.crossover()
+            population.mutation()
+            population.fitness()
+            population.eliminate_less_fit()
 
     print('stop')
 
