@@ -18,7 +18,8 @@ class Genetic:
         self.num_chromosomes = num_chromosomes
         self.populations: list[Population] = list()
 
-        self.best_match: str = ''
+        self.best_phrase: str = ''
+        self.best_fitness: float = 0
         self.initilize()
 
     def initilize(self) -> None:
@@ -28,22 +29,26 @@ class Genetic:
         for _ in range(self.num_populations):
             population = Population(num_chromosomes=self.num_chromosomes, genetic=self)
             self.populations.append(population)
+        self.update_best_match()
 
-    def logs(self, generation: int):
-        print(f'best match: {self.best_match}')
+    def log(self, generation: int):
+        print(f'best match: {self.best_fitness:.2f}% = {self.best_phrase}')
         print(f'total geneartions: {generation}')
         print(f'avarage fitness: {self.avarage_fitness}%')
         print(f'total population: {self.num_populations}')
         print(f'mutation rate: {self.mutation_rate}%')
 
     def update_best_match(self):
-        best_fitness, best_phrase = 0.0, ''
+        best_phrase: str = ''
+        best_fitness: float = 0
+
         for population in self.populations:
             for chromosome in population.chromosomes:
-                fitness = chromosome.fitness()
-                if fitness >= best_fitness:
+                fitness = chromosome.fitness
+                if fitness > best_fitness:
                     best_fitness, best_phrase = fitness, chromosome.get_phrase
-        self.best_match = f'{best_fitness:.2f}% = {best_phrase}'
+        self.best_phrase = best_phrase
+        self.best_fitness = best_fitness
 
     @property
     def avarage_fitness(self):
@@ -51,6 +56,6 @@ class Genetic:
         total: int = 0
         for population in self.populations:
             for chromosome in population.chromosomes:
-                sum_fitness += chromosome.fitness()
+                sum_fitness += chromosome.fitness
                 total += 100
         return f'{(sum_fitness / total):.2f}'

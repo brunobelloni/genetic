@@ -1,20 +1,21 @@
 from utils.genetic import Genetic
+import random
 
 
 def run():
-    phrase = 'abcd'
+    random.seed(2019)
+    phrase = 'Infinite Monkey Theorem'
     generation = 0
 
     genetic = Genetic(
         src_phrase=phrase,
-        num_populations=100,
-        num_chromosomes=50,
-        mutation_rate=0.8
+        num_populations=200,
+        num_chromosomes=5,
+        mutation_rate=0.1
     )
 
-    while genetic.best_match != f'{100:.2f}% = {phrase}':
+    while genetic.best_phrase != phrase:
         generation += 1
-        genetic.logs(generation=generation)
 
         for population in genetic.populations:
             population.crossover()
@@ -22,6 +23,7 @@ def run():
             population.eliminate_less_fit()
 
         genetic.update_best_match()
+        genetic.log(generation=generation)
 
 
 if __name__ == '__main__':
