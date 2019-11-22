@@ -1,15 +1,18 @@
 from __future__ import annotations
 
-from utils.population import Population
+from functools import reduce
+
 from .gene import Gene
 import random
-from copy import deepcopy
 
 
 class Chromosome:
     def __init__(self, population: Population, initialize: bool = True):
         """
         The chromosome contains information which feature is included and which is excluded.
+
+        :param population: contains a reference to the chromosome population
+        :param initialize: defines if chromosome should be randomly initialized
         """
         self.genes: list[Gene] = list()
         self.population: Population = population
@@ -29,23 +32,25 @@ class Chromosome:
     @property
     def fitness(self) -> float:
         """
-        Evaluates the chromosome with a note.
-        Note 100 means that the sentence is correct.
+        Evaluates the chromosome with a note. Note 100 means that the sentence is correct.
         """
         fit = 0
         src_phrase = self.population.genetic.src_phrase
         for gene, letter in zip(self.genes, src_phrase):
             if gene.letter == letter:
                 fit += 1
-        return (100 * fit) / len(src_phrase)
+        return 100 * fit / len(src_phrase)
 
     def mutation(self):
+        """
+        apply a mutation possibility to all chromosome genes
+        """
         new_chromosome = Chromosome(population=self.population, initialize=False)
         new_chromosome.set_phrase(self.get_phrase)
 
         for gene in new_chromosome.genes:
-            if random.random() < self.population.genetic.mutation_rate:
-                gene.initilize()
+            if random.random() * 100 < self.population.genetic.mutation_rate:
+                gene.initilize()  # draws a new value for the chromosome
 
         if self.fitness < new_chromosome.fitness:
             self.population.chromosomes.append(new_chromosome)
@@ -53,6 +58,7 @@ class Chromosome:
     def crossover(self, chromosome: Chromosome) -> tuple[Chromosome, Chromosome]:
         """
         crosses two chromosomes
+        :param chromosome: chromosome that will be crossed with self
         """
 
         phrase_len = len(self.population.genetic.src_phrase)

@@ -1,15 +1,19 @@
 from __future__ import annotations
+
 import random
 import string
 
-ascii = [char for char in string.ascii_letters] + [' ']
+# ascii = [char for char in string.ascii_letters] + [' ']
+ascii = [char for char in string.ascii_lowercase] + [' ']
 
 
 class Gene:
     def __init__(self, chromosome: Chromosome, letter: str = None):
         """
-        Gene represents one letter of the alphabet
-        Lowercase is different from Uppercase
+        Gene represents one letter of the alphabet. Lowercase is different from Uppercase
+
+        :param letter: gene value
+        :param chromosome: reference to gene chromosome
         """
         self.letter = letter
         self.chromosome = chromosome

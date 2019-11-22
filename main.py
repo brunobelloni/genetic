@@ -1,20 +1,22 @@
+from __future__ import annotations
+
 from utils.genetic import Genetic
 import random
 
 
 def run():
     random.seed(2019)
-    phrase = 'Infinite Monkey Theorem'
+    phrase = 'infinite monkey theorem'
     generation = 0
 
     genetic = Genetic(
         src_phrase=phrase,
         num_populations=200,
         num_chromosomes=5,
-        mutation_rate=0.1
+        mutation_rate=0.10
     )
 
-    while genetic.best_phrase != phrase:
+    while genetic.best_chromosome.get_phrase != phrase:
         generation += 1
 
         for population in genetic.populations:
@@ -22,7 +24,6 @@ def run():
             population.mutation()
             population.eliminate_less_fit()
 
-        genetic.update_best_match()
         genetic.log(generation=generation)
 
 
