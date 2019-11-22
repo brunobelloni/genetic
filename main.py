@@ -5,7 +5,7 @@ import random
 
 
 def run():
-    random.seed(2019)
+    random.seed(4252695618)
     phrase = 'infinite monkey theorem'
     generation = 0
 
@@ -13,17 +13,16 @@ def run():
         src_phrase=phrase,
         num_populations=200,
         num_chromosomes=5,
-        mutation_rate=0.10
+        mutation_rate=5
     )
 
     while genetic.best_chromosome.get_phrase != phrase:
-        generation += 1
-
         for population in genetic.populations:
             population.crossover()
             population.mutation()
             population.eliminate_less_fit()
 
+        generation += 1
         genetic.log(generation=generation)
 
 

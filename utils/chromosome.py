@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-from functools import reduce
-
 from .gene import Gene
 import random
 

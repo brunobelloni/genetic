@@ -15,7 +15,7 @@ class Genetic:
         :param num_chromosomes: Number of chromosomes in population (generation)
         """
         self.src_phrase = src_phrase
-        self.mutation_rate = mutation_rate * 100
+        self.mutation_rate = mutation_rate
         self.num_populations = num_populations
         self.num_chromosomes = num_chromosomes
 
@@ -40,7 +40,7 @@ class Genetic:
 
         print(f'best match: {self.best_chromosome.fitness:.2f}% = {self.best_chromosome.get_phrase}')
         print(f'total generations: {generation}')
-        print(f'avarage fitness: {self.avarage_fitness}%')
+        print(f'avarage fitness: {(self.avarage_fitness):.2f}%')
         print(f'total population: {self.num_populations}')
         print(f'mutation rate: {self.mutation_rate}%')
 
@@ -58,12 +58,11 @@ class Genetic:
     @property
     def avarage_fitness(self):
         """
-        calculates the average fitness of all chromosomes
+        calculates the average fitness the best chromosomes
         """
-        sum_fitness: float = 0
-        total: int = 0
+        sum: float = 0
+
         for population in self.populations:
-            for chromosome in population.chromosomes:
-                sum_fitness += chromosome.fitness
-                total += 100
-        return f'{(sum_fitness / total):.2f}'
+            sum += population.get_best_chromosome().fitness
+
+        return sum / self.num_populations

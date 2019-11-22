@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="864959f2-6bfb-4801-a623-fd96f1b59c6b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/genetic.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/genetic.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/chromosome.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/chromosome.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/gene.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/gene.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/genetic.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/genetic.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/population.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/population.py" afterDir="false" />
     </list>
@@ -53,7 +50,7 @@
       <workItem from="1574335309340" duration="14537000" />
       <workItem from="1574394923717" duration="5624000" />
       <workItem from="1574427404952" duration="23000" />
-      <workItem from="1574427448578" duration="2612000" />
+      <workItem from="1574427448578" duration="3133000" />
     </task>
     <task id="LOCAL-00001" summary="idea settings">
       <created>1574335452082</created>
@@ -83,7 +80,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574345905431</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="logs">
+      <created>1574430139595</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1574430139595</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -107,17 +111,11 @@
     <MESSAGE value="code architecture" />
     <MESSAGE value="generic type" />
     <MESSAGE value="genetic algorithm main loop" />
-    <option name="LAST_COMMIT_MESSAGE" value="genetic algorithm main loop" />
+    <MESSAGE value="logs" />
+    <option name="LAST_COMMIT_MESSAGE" value="logs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/utils/chromosome.py</url>
-          <line>37</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -128,6 +126,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/genetic$main.coverage" NAME="main Coverage Results" MODIFIED="1574430071927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/genetic$main.coverage" NAME="main Coverage Results" MODIFIED="1574430594142" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -26,7 +26,7 @@ class Population:
             chromosome = Chromosome(population=self)
             self.chromosomes.append(chromosome)
 
-    def selection(self, quant: int = 2, reverse=True) -> list[utils.chromosome.Chromosome]:
+    def selection(self, quant: int = 2, reverse: bool = True) -> list[Chromosome]:
         """
         Select chromosomes in the population
         :param quant: number of chromosomes to select
