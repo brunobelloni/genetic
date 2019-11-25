@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from utils.genetic import Genetic
+from genetic.genetic import Genetic
 import random
 
 
@@ -11,9 +11,9 @@ def run():
 
     genetic = Genetic(
         src_phrase=phrase,
-        num_populations=200,
-        num_chromosomes=5,
-        mutation_rate=5
+        num_populations=100,
+        num_chromosomes=25,
+        mutation_rate=10
     )
 
     while genetic.best_chromosome.get_phrase != phrase:
