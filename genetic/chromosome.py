@@ -35,7 +35,7 @@ class Chromosome:
         fit = 0
         src_phrase = self.population.genetic.src_phrase
         for gene, letter in zip(self.genes, src_phrase):
-            if gene.letter == letter:
+            if gene.letter is letter:
                 fit += 1
         return 100 * fit / len(src_phrase)
 

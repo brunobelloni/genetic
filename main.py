@@ -4,7 +4,7 @@ from genetic.genetic import Genetic
 import random
 
 
-def run():
+def main():
     random.seed(4252695618)
     phrase = 'infinite monkey theorem'
     generation = 0
@@ -27,4 +27,4 @@ def run():
 
 
 if __name__ == '__main__':
-    run()
+    main()
