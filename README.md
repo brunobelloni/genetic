@@ -1,7 +1,7 @@
 # genetic
 Genetic Algorithm: Infinite Monkey Theorem
 
-#### Inspirations
+#### References
 
 [The Coding Train](https://www.youtube.com/watch?v=nrKjSeoc7fc)
 
